@@ -10,8 +10,15 @@ if (!requireNamespace("maps", quietly = TRUE)){
   install.packages("maps")
 }
 
+# Downloads and installs ggplot2 if it isn't installed already
+if (!requireNamespace("ggplot2", quietly = TRUE)){
+  
+  install.packages("ggplot2")
+}
+
 # Imports the RNetCDF library
 library(RNetCDF)
+library(ggplot2)
 
 
 # Defines our function to plot temperature anomaly
@@ -71,5 +78,7 @@ plot_temp_anomaly <- function (date, thredds_url) {
 
 # Calls our function and plots the temperature anomaly for a desired date
 plot_temp_anomaly('2020-01-01', 'https://www.ncei.noaa.gov/thredds/dodsC/noaa-global-temp-v5/NOAAGlobalTemp_v5.0.0_gridded_s188001_e202212_c20230108T133308.nc')
+
+
 
 
